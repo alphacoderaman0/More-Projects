@@ -1,509 +1,551 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/x-icon" href="data:image/png;base64,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">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MORE PROJECTS</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon"
+    href="data:image/png;base64,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">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MORE PROJECTS</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <div class="heading">
-        <a href="https://alphacoderaman.netlify.app" class="btn btn-info" style="z-index: 99999; position: absolute; margin-top: 5px;">Back</a>
-        <h1>MORE PROJECTS</h1>
+  <div class="heading">
+    <a href="https://alphacoderaman.netlify.app" class="btn btn-info"
+      style="z-index: 99999; position: absolute; margin-top: 5px;">Back</a>
+    <h1>MORE PROJECTS</h1>
+  </div>
+  <div class="container-fluid">
+    <!-- Ediary -->
+    <div class="card" style="width: 25rem;">
+      <img src="images/ediary.png" class="card-img-top" alt="LOADING...">
+      <div class="card-body">
+        <h5 class="card-title text-center">E-Diary Management System</h5>
+        <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
+      </div>
+      <table class="table">
+        <tr>
+          <th>Frontend:</th>
+          <td>HTML, CSS, JS, Bootstrap</td>
+        </tr>
+        <tr>
+          <th>Backend:</th>
+          <td>Python(Django)</td>
+        </tr>
+        <tr>
+          <th>Database:</th>
+          <td>PostgreSQL</td>
+        </tr>
+        <tr>
+          <th>IDE:</th>
+          <td>VS Code</td>
+        </tr>
+      </table>
+      <div class="card-body">
+        <a href="#" class="btn btn-success">Preview</a>
+        <a href="https://github.com/alphacoderaman0" class="btn btn-success">Source Code</a>
+      </div>
     </div>
-    <div class="container-fluid">
-        <div class="card" style="width: 25rem;">
-            <img src="images/ediary.png" class="card-img-top" alt="LOADING...">
-            <div class="card-body">
-              <h5 class="card-title text-center">E-Diary Management System</h5>
-              <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
-            </div>
-            <table class="table">
-                <tr>
-                    <th>Frontend:</th>
-                    <td>HTML, CSS, JS, Bootstrap</td>
-                </tr>
-                <tr>
-                    <th>Backend:</th>
-                    <td>Python(Django)</td>
-                </tr>
-                <tr>
-                    <th>Database:</th>
-                    <td>PostgreSQL</td>
-                </tr>
-                <tr>
-                    <th>IDE:</th>
-                    <td>VS Code</td>
-                </tr>
-            </table>
-            <div class="card-body">
-              <a href="#" class="btn btn-success">Preview</a>
-              <a href="https://github.com/alphacoderaman0" class="btn btn-success">Source Code</a>
-            </div>
-          </div>
-        <div class="card" style="width: 25rem;">
-            <img src="images/Egyan.png" class="card-img-top" alt="LOADING...">
-            <div class="card-body">
-              <h5 class="card-title text-center">E-Gyan Portal</h5>
-              <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
-            </div>
-            <table class="table">
-                <tr>
-                    <th>Frontend:</th>
-                    <td>HTML, CSS, JS, Bootstrap</td>
-                </tr>
-                <tr>
-                    <th>Backend:</th>
-                    <td>Python(Django)</td>
-                </tr>
-                <tr>
-                    <th>Database:</th>
-                    <td>SQLite</td>
-                </tr>
-                <tr>
-                    <th>IDE:</th>
-                    <td>VS Code</td>
-                </tr>
-            </table>
-            <div class="card-body">
-              <a href="#" class="btn btn-success">Preview</a>
-              <a href="https://github.com/alphacoderaman0" class="btn btn-success">Source Code</a>
-            </div>
-          </div>
+    <!-- Egyan -->
+    <div class="card" style="width: 25rem;">
+      <img src="images/Egyan.png" class="card-img-top" alt="LOADING...">
+      <div class="card-body">
+        <h5 class="card-title text-center">E-Gyan Portal</h5>
+        <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
+      </div>
+      <table class="table">
+        <tr>
+          <th>Frontend:</th>
+          <td>HTML, CSS, JS, Bootstrap</td>
+        </tr>
+        <tr>
+          <th>Backend:</th>
+          <td>Python(Django)</td>
+        </tr>
+        <tr>
+          <th>Database:</th>
+          <td>SQLite</td>
+        </tr>
+        <tr>
+          <th>IDE:</th>
+          <td>VS Code</td>
+        </tr>
+      </table>
+      <div class="card-body">
+        <a href="#" class="btn btn-success">Preview</a>
+        <a href="https://github.com/alphacoderaman0" class="btn btn-success">Source Code</a>
+      </div>
+    </div>
+    <!-- DailyDose-React -->
+    <div class="card" style="width: 25rem;">
+      <img src="images/Dailydose.png" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
+      <div class="card-body">
+        <h5 class="card-title text-center">DailyDose - News App</h5>
+        <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
+      </div>
+      <table class="table">
+        <tr>
+          <th>UI/UX:</th>
+          <td>HTML5,Bootstrap</td>
+        </tr>
+        <tr>
+          <th>Logic:</th>
+          <td>ReactJs</td>
+        </tr>
+        <tr>
+          <th>Database:</th>
+          <td>none</td>
+        </tr>
+        <tr>
+          <th>IDE:</th>
+          <td>VS Code</td>
+        </tr>
+      </table>
+      <div class="card-body">
+        <a href="#" class="btn btn-success" target="_blank">Preview</a>
+        <a href="https://github.com/alphacoderaman0/DailyDose-React.git" class="btn btn-success" target="_blank">Source
+          Code</a>
+      </div>
+    </div>
+    <!-- text-utils -->
+    <div class="card" style="width: 25rem;">
+      <img src="images/textutils.jpg" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
+      <div class="card-body">
+        <h5 class="card-title text-center">TextUtils - word formator</h5>
+        <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
+      </div>
+      <table class="table">
+        <tr>
+          <th>UI/UX:</th>
+          <td>HTML5,Bootstrap</td>
+        </tr>
+        <tr>
+          <th>Logic:</th>
+          <td>ReactJs</td>
+        </tr>
+        <tr>
+          <th>Database:</th>
+          <td>none</td>
+        </tr>
+        <tr>
+          <th>IDE:</th>
+          <td>VS Code</td>
+        </tr>
+      </table>
+      <div class="card-body">
+        <a href="https://00-textutils.netlify.app" class="btn btn-success" target="_blank">Preview</a>
+        <a href="https://github.com/alphacoderaman0/TextUtils.git" class="btn btn-success" target="_blank">Source
+          Code</a>
+      </div>
+    </div>
 
-          <div class="card" style="width: 25rem;">
-            <img src="images/tdl.png" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
-            <div class="card-body">
-              <h5 class="card-title text-center">TO-DO-LIST</h5>
-              <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
-            </div>
-            <table class="table">
-                <tr>
-                    <th>UI/UX:</th>
-                    <td>Tkinter</td>
-                </tr>
-                <tr>
-                    <th>Language:</th>
-                    <td>Python(Django)</td>
-                </tr>
-                <tr>
-                    <th>Database:</th>
-                    <td>none</td>
-                </tr>
-                <tr>
-                    <th>IDE:</th>
-                    <td>VS Code</td>
-                </tr>
-            </table>
-            <div class="card-body">
-              <a href="#" class="btn btn-success">Preview</a>
-              <a href="https://github.com/alphacoderaman0" class="btn btn-success">Source Code</a>
-            </div>
-          </div>
-          <div class="card" style="width: 25rem;">
-            <img src="images/translator.png" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
-            <div class="card-body">
-              <h5 class="card-title text-center">Translator</h5>
-              <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
-            </div>
-            <table class="table">
-                <tr>
-                    <th>UI/UX:</th>
-                    <td>Tkinter</td>
-                </tr>
-                <tr>
-                    <th>Language:</th>
-                    <td>Python(Django)</td>
-                </tr>
-                <tr>
-                    <th>Database:</th>
-                    <td>none</td>
-                </tr>
-                <tr>
-                    <th>IDE:</th>
-                    <td>VS Code</td>
-                </tr>
-            </table>
-            <div class="card-body">
-              <a href="#" class="btn btn-success">Preview</a>
-              <a href="https://github.com/alphacoderaman0" class="btn btn-success">Source Code</a>
-            </div>
-          </div>
-          <div class="card" style="width: 25rem;">
-            <img src="images/prediction.png" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
-            <div class="card-body">
-              <h5 class="card-title text-center">Prediction Game</h5>
-              <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
-            </div>
-            <table class="table">
-                <tr>
-                    <th>UI/UX:</th>
-                    <td>Tkinter</td>
-                </tr>
-                <tr>
-                    <th>Language:</th>
-                    <td>Python(Django)</td>
-                </tr>
-                <tr>
-                    <th>Database:</th>
-                    <td>none</td>
-                </tr>
-                <tr>
-                    <th>IDE:</th>
-                    <td>VS Code</td>
-                </tr>
-            </table>
-            <div class="card-body">
-              <a href="#" class="btn btn-success">Preview</a>
-              <a href="https://github.com/alphacoderaman0" class="btn btn-success">Source Code</a>
-            </div>
-          </div>
+    <!-- todo-python -->
+    <div class="card" style="width: 25rem;">
+      <img src="images/tdl.png" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
+      <div class="card-body">
+        <h5 class="card-title text-center">TO-DO-LIST</h5>
+        <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
+      </div>
+      <table class="table">
+        <tr>
+          <th>UI/UX:</th>
+          <td>Tkinter</td>
+        </tr>
+        <tr>
+          <th>Language:</th>
+          <td>Python(Django)</td>
+        </tr>
+        <tr>
+          <th>Database:</th>
+          <td>none</td>
+        </tr>
+        <tr>
+          <th>IDE:</th>
+          <td>VS Code</td>
+        </tr>
+      </table>
+      <div class="card-body">
+        <a href="#" class="btn btn-success">Preview</a>
+        <a href="https://github.com/alphacoderaman0" class="btn btn-success">Source Code</a>
+      </div>
+    </div>
+    <!-- tranlator-python -->
+    <div class="card" style="width: 25rem;">
+      <img src="images/translator.png" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
+      <div class="card-body">
+        <h5 class="card-title text-center">Translator</h5>
+        <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
+      </div>
+      <table class="table">
+        <tr>
+          <th>UI/UX:</th>
+          <td>Tkinter</td>
+        </tr>
+        <tr>
+          <th>Language:</th>
+          <td>Python(Django)</td>
+        </tr>
+        <tr>
+          <th>Database:</th>
+          <td>none</td>
+        </tr>
+        <tr>
+          <th>IDE:</th>
+          <td>VS Code</td>
+        </tr>
+      </table>
+      <div class="card-body">
+        <a href="#" class="btn btn-success">Preview</a>
+        <a href="https://github.com/alphacoderaman0" class="btn btn-success">Source Code</a>
+      </div>
+    </div>
+    <!-- prediction game -->
+    <div class="card" style="width: 25rem;">
+      <img src="images/prediction.png" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
+      <div class="card-body">
+        <h5 class="card-title text-center">Prediction Game</h5>
+        <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
+      </div>
+      <table class="table">
+        <tr>
+          <th>UI/UX:</th>
+          <td>Tkinter</td>
+        </tr>
+        <tr>
+          <th>Language:</th>
+          <td>Python(Django)</td>
+        </tr>
+        <tr>
+          <th>Database:</th>
+          <td>none</td>
+        </tr>
+        <tr>
+          <th>IDE:</th>
+          <td>VS Code</td>
+        </tr>
+      </table>
+      <div class="card-body">
+        <a href="#" class="btn btn-success">Preview</a>
+        <a href="https://github.com/alphacoderaman0" class="btn btn-success">Source Code</a>
+      </div>
+    </div>
 
-          
-          <div class="card" style="width: 25rem;">
-            <img src="images/age.png" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
-            <div class="card-body">
-              <h5 class="card-title text-center">Age Calculator</h5>
-              <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
-            </div>
-            <table class="table">
-                <tr>
-                    <th>UI/UX:</th>
-                    <td>html5, CSS</td>
-                </tr>
-                <tr>
-                    <th>Logic:</th>
-                    <td>Javascript</td>
-                </tr>
-                <tr>
-                    <th>Database:</th>
-                    <td>none</td>
-                </tr>
-                <tr>
-                    <th>IDE:</th>
-                    <td>VS Code</td>
-                </tr>
-            </table>
-            <div class="card-body">
-              <a href="https://agecalculator0.netlify.app" class="btn btn-success" target="_blank">Preview</a>
-              <a href="https://github.com/alphacoderaman0" class="btn btn-success" target="_blank">Source Code</a>
-            </div>
-          </div>
-
-          <div class="card" style="width: 25rem;">
-            <img src="images/tdljs.png" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
-            <div class="card-body">
-              <h5 class="card-title text-center">TO-DO-LIST</h5>
-              <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
-            </div>
-            <table class="table">
-                <tr>
-                    <th>UI/UX:</th>
-                    <td>HTML5, CSS</td>
-                </tr>
-                <tr>
-                    <th>Logic:</th>
-                    <td>Javascript</td>
-                </tr>
-                <tr>
-                    <th>Database:</th>
-                    <td>none</td>
-                </tr>
-                <tr>
-                    <th>IDE:</th>
-                    <td>VS Code</td>
-                </tr>
-            </table>
-            <div class="card-body">
-              <a href="https://0-to-do-list.netlify.app" class="btn btn-success" target="_blank">Preview</a>
-              <a href="https://github.com/alphacoderaman0" class="btn btn-success" target="_blank">Source Code</a>
-            </div>
-          </div>
-
-          <div class="card" style="width: 25rem;">
-            <img src="images/unicode.png" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
-            <div class="card-body">
-              <h5 class="card-title text-center">ASCII/UNICODE Generator</h5>
-              <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
-            </div>
-            <table class="table">
-                <tr>
-                    <th>UI/UX:</th>
-                    <td>HTML5, CSS</td>
-                </tr>
-                <tr>
-                    <th>Logic:</th>
-                    <td>Javascript</td>
-                </tr>
-                <tr>
-                    <th>Database:</th>
-                    <td>none</td>
-                </tr>
-                <tr>
-                    <th>IDE:</th>
-                    <td>VS Code</td>
-                </tr>
-            </table>
-            <div class="card-body">
-              <a href="https://0-unicode.netlify.app" class="btn btn-success" target="_blank">Preview</a>
-              <a href="https://github.com/alphacoderaman0" class="btn btn-success" target="_blank">Source Code</a>
-            </div>
-          </div>
-
-          <div class="card" style="width: 25rem;">
-            <img src="images/tip.png" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
-            <div class="card-body">
-              <h5 class="card-title text-center">Tip Calculator</h5>
-              <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
-            </div>
-            <table class="table">
-                <tr>
-                    <th>UI/UX:</th>
-                    <td>HTML5, CSS</td>
-                </tr>
-                <tr>
-                    <th>Logic:</th>
-                    <td>Javascript</td>
-                </tr>
-                <tr>
-                    <th>Database:</th>
-                    <td>none</td>
-                </tr>
-                <tr>
-                    <th>IDE:</th>
-                    <td>VS Code</td>
-                </tr>
-            </table>
-            <div class="card-body">
-              <a href="https://0-tipcalculator.netlify.app" class="btn btn-success" target="_blank">Preview</a>
-              <a href="https://github.com/alphacoderaman0" class="btn btn-success" target="_blank">Source Code</a>
-            </div>
-          </div>
-
-          <div class="card" style="width: 25rem;">
-            <img src="images/Expense.png" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
-            <div class="card-body">
-              <h5 class="card-title text-center">Expense Tracker</h5>
-              <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
-            </div>
-            <table class="table">
-                <tr>
-                    <th>UI/UX:</th>
-                    <td>HTML5, CSS</td>
-                </tr>
-                <tr>
-                    <th>Logic:</th>
-                    <td>Javascript</td>
-                </tr>
-                <tr>
-                    <th>Database:</th>
-                    <td>none</td>
-                </tr>
-                <tr>
-                    <th>IDE:</th>
-                    <td>VS Code</td>
-                </tr>
-            </table>
-            <div class="card-body">
-              <a href="https://0-expensetracker.netlify.app" class="btn btn-success" target="_blank">Preview</a>
-              <a href="https://github.com/alphacoderaman0" class="btn btn-success" target="_blank">Source Code</a>
-            </div>
-          </div>
-
-          <div class="card" style="width: 25rem;">
-            <img src="images/fd.png" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
-            <div class="card-body">
-              <h5 class="card-title text-center">FD Calculator</h5>
-              <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
-            </div>
-            <table class="table">
-                <tr>
-                    <th>UI/UX:</th>
-                    <td>HTML5, CSS</td>
-                </tr>
-                <tr>
-                    <th>Logic:</th>
-                    <td>Javascript</td>
-                </tr>
-                <tr>
-                    <th>Database:</th>
-                    <td>none</td>
-                </tr>
-                <tr>
-                    <th>IDE:</th>
-                    <td>VS Code</td>
-                </tr>
-            </table>
-            <div class="card-body">
-              <a href="https://0-fdcalculator.netlify.app" class="btn btn-success" target="_blank">Preview</a>
-              <a href="https://github.com/alphacoderaman0" class="btn btn-success" target="_blank">Source Code</a>
-            </div>
-          </div>
-
-          <div class="card" style="width: 25rem;">
-            <img src="images/Password.png" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
-            <div class="card-body">
-              <h5 class="card-title text-center">Password Generator</h5>
-              <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
-            </div>
-            <table class="table">
-                <tr>
-                    <th>UI/UX:</th>
-                    <td>HTML5, CSS</td>
-                </tr>
-                <tr>
-                    <th>Logic:</th>
-                    <td>Javascript</td>
-                </tr>
-                <tr>
-                    <th>Database:</th>
-                    <td>none</td>
-                </tr>
-                <tr>
-                    <th>IDE:</th>
-                    <td>VS Code</td>
-                </tr>
-            </table>
-            <div class="card-body">
-              <a href="https://0-passwordgenerator.netlify.app" class="btn btn-success" target="_blank">Preview</a>
-              <a href="https://github.com/alphacoderaman0" class="btn btn-success" target="_blank">Source Code</a>
-            </div>
-          </div>
-
-          <div class="card" style="width: 25rem;">
-            <img src="images/vowel.png" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
-            <div class="card-body">
-              <h5 class="card-title text-center">Vowel Checker</h5>
-              <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
-            </div>
-            <table class="table">
-                <tr>
-                    <th>UI/UX:</th>
-                    <td>HTML5, CSS</td>
-                </tr>
-                <tr>
-                    <th>Logic:</th>
-                    <td>Javascript</td>
-                </tr>
-                <tr>
-                    <th>Database:</th>
-                    <td>none</td>
-                </tr>
-                <tr>
-                    <th>IDE:</th>
-                    <td>VS Code</td>
-                </tr>
-            </table>
-            <div class="card-body">
-              <a href="https://0-vowelchecker.netlify.app" class="btn btn-success" target="_blank">Preview</a>
-              <a href="https://github.com/alphacoderaman0" class="btn btn-success" target="_blank">Source Code</a>
-            </div>
-          </div>
-
-          <div class="card" style="width: 25rem;">
-            <img src="images/pop.png" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
-            <div class="card-body">
-              <h5 class="card-title text-center">Popover</h5>
-              <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
-            </div>
-            <table class="table">
-                <tr>
-                    <th>UI/UX:</th>
-                    <td>HTML5, CSS</td>
-                </tr>
-                <tr>
-                    <th>Logic:</th>
-                    <td>Javascript</td>
-                </tr>
-                <tr>
-                    <th>Database:</th>
-                    <td>none</td>
-                </tr>
-                <tr>
-                    <th>IDE:</th>
-                    <td>VS Code</td>
-                </tr>
-            </table>
-            <div class="card-body">
-              <a href="https://0-popover.netlify.app" class="btn btn-success" target="_blank">Preview</a>
-              <a href="https://github.com/alphacoderaman0" class="btn btn-success" target="_blank">Source Code</a>
-            </div>
-          </div>
-
-          <div class="card" style="width: 25rem;">
-            <img src="images/digital.png" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
-            <div class="card-body">
-              <h5 class="card-title text-center">Digital Clock</h5>
-              <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
-            </div>
-            <table class="table">
-                <tr>
-                    <th>UI/UX:</th>
-                    <td>HTML5, CSS</td>
-                </tr>
-                <tr>
-                    <th>Logic:</th>
-                    <td>Javascript</td>
-                </tr>
-                <tr>
-                    <th>Database:</th>
-                    <td>none</td>
-                </tr>
-                <tr>
-                    <th>IDE:</th>
-                    <td>VS Code</td>
-                </tr>
-            </table>
-            <div class="card-body">
-              <a href="https://0-digitalclock.netlify.app" class="btn btn-success" target="_blank">Preview</a>
-              <a href="https://github.com/alphacoderaman0" class="btn btn-success" target="_blank">Source Code</a>
-            </div>
-          </div>
-          <div class="card" style="width: 25rem;">
-            <img src="images/textutils.jpg" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
-            <div class="card-body">
-              <h5 class="card-title text-center">TextUtils</h5>
-              <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
-            </div>
-            <table class="table">
-                <tr>
-                    <th>UI/UX:</th>
-                    <td>HTML5,Bootstrap</td>
-                </tr>
-                <tr>
-                    <th>Logic:</th>
-                    <td>ReactJs</td>
-                </tr>
-                <tr>
-                    <th>Database:</th>
-                    <td>none</td>
-                </tr>
-                <tr>
-                    <th>IDE:</th>
-                    <td>VS Code</td>
-                </tr>
-            </table>
-            <div class="card-body">
-              <a href="https://00-textutils.netlify.app" class="btn btn-success" target="_blank">Preview</a>
-              <a href="https://github.com/alphacoderaman0/TextUtils.git" class="btn btn-success" target="_blank">Source Code</a>
-            </div>
-          </div>
+    <!-- Age-calculator -->
+    <div class="card" style="width: 25rem;">
+      <img src="images/age.png" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
+      <div class="card-body">
+        <h5 class="card-title text-center">Age Calculator</h5>
+        <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
+      </div>
+      <table class="table">
+        <tr>
+          <th>UI/UX:</th>
+          <td>html5, CSS</td>
+        </tr>
+        <tr>
+          <th>Logic:</th>
+          <td>Javascript</td>
+        </tr>
+        <tr>
+          <th>Database:</th>
+          <td>none</td>
+        </tr>
+        <tr>
+          <th>IDE:</th>
+          <td>VS Code</td>
+        </tr>
+      </table>
+      <div class="card-body">
+        <a href="https://agecalculator0.netlify.app" class="btn btn-success" target="_blank">Preview</a>
+        <a href="https://github.com/alphacoderaman0" class="btn btn-success" target="_blank">Source Code</a>
+      </div>
+    </div>
+    <!-- todo-js -->
+    <div class="card" style="width: 25rem;">
+      <img src="images/tdljs.png" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
+      <div class="card-body">
+        <h5 class="card-title text-center">TO-DO-LIST</h5>
+        <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
+      </div>
+      <table class="table">
+        <tr>
+          <th>UI/UX:</th>
+          <td>HTML5, CSS</td>
+        </tr>
+        <tr>
+          <th>Logic:</th>
+          <td>Javascript</td>
+        </tr>
+        <tr>
+          <th>Database:</th>
+          <td>none</td>
+        </tr>
+        <tr>
+          <th>IDE:</th>
+          <td>VS Code</td>
+        </tr>
+      </table>
+      <div class="card-body">
+        <a href="https://0-to-do-list.netlify.app" class="btn btn-success" target="_blank">Preview</a>
+        <a href="https://github.com/alphacoderaman0" class="btn btn-success" target="_blank">Source Code</a>
+      </div>
+    </div>
+    <!-- unicode converter -->
+    <div class="card" style="width: 25rem;">
+      <img src="images/unicode.png" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
+      <div class="card-body">
+        <h5 class="card-title text-center">ASCII/UNICODE Generator</h5>
+        <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
+      </div>
+      <table class="table">
+        <tr>
+          <th>UI/UX:</th>
+          <td>HTML5, CSS</td>
+        </tr>
+        <tr>
+          <th>Logic:</th>
+          <td>Javascript</td>
+        </tr>
+        <tr>
+          <th>Database:</th>
+          <td>none</td>
+        </tr>
+        <tr>
+          <th>IDE:</th>
+          <td>VS Code</td>
+        </tr>
+      </table>
+      <div class="card-body">
+        <a href="https://0-unicode.netlify.app" class="btn btn-success" target="_blank">Preview</a>
+        <a href="https://github.com/alphacoderaman0" class="btn btn-success" target="_blank">Source Code</a>
+      </div>
+    </div>
+    <!-- tip calculator -->
+    <div class="card" style="width: 25rem;">
+      <img src="images/tip.png" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
+      <div class="card-body">
+        <h5 class="card-title text-center">Tip Calculator</h5>
+        <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
+      </div>
+      <table class="table">
+        <tr>
+          <th>UI/UX:</th>
+          <td>HTML5, CSS</td>
+        </tr>
+        <tr>
+          <th>Logic:</th>
+          <td>Javascript</td>
+        </tr>
+        <tr>
+          <th>Database:</th>
+          <td>none</td>
+        </tr>
+        <tr>
+          <th>IDE:</th>
+          <td>VS Code</td>
+        </tr>
+      </table>
+      <div class="card-body">
+        <a href="https://0-tipcalculator.netlify.app" class="btn btn-success" target="_blank">Preview</a>
+        <a href="https://github.com/alphacoderaman0" class="btn btn-success" target="_blank">Source Code</a>
+      </div>
+    </div>
+    <!-- expense calculator -->
+    <div class="card" style="width: 25rem;">
+      <img src="images/Expense.png" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
+      <div class="card-body">
+        <h5 class="card-title text-center">Expense Tracker</h5>
+        <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
+      </div>
+      <table class="table">
+        <tr>
+          <th>UI/UX:</th>
+          <td>HTML5, CSS</td>
+        </tr>
+        <tr>
+          <th>Logic:</th>
+          <td>Javascript</td>
+        </tr>
+        <tr>
+          <th>Database:</th>
+          <td>none</td>
+        </tr>
+        <tr>
+          <th>IDE:</th>
+          <td>VS Code</td>
+        </tr>
+      </table>
+      <div class="card-body">
+        <a href="https://0-expensetracker.netlify.app" class="btn btn-success" target="_blank">Preview</a>
+        <a href="https://github.com/alphacoderaman0" class="btn btn-success" target="_blank">Source Code</a>
+      </div>
+    </div>
+    <!-- fd calculator -->
+    <div class="card" style="width: 25rem;">
+      <img src="images/fd.png" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
+      <div class="card-body">
+        <h5 class="card-title text-center">FD Calculator</h5>
+        <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
+      </div>
+      <table class="table">
+        <tr>
+          <th>UI/UX:</th>
+          <td>HTML5, CSS</td>
+        </tr>
+        <tr>
+          <th>Logic:</th>
+          <td>Javascript</td>
+        </tr>
+        <tr>
+          <th>Database:</th>
+          <td>none</td>
+        </tr>
+        <tr>
+          <th>IDE:</th>
+          <td>VS Code</td>
+        </tr>
+      </table>
+      <div class="card-body">
+        <a href="https://0-fdcalculator.netlify.app" class="btn btn-success" target="_blank">Preview</a>
+        <a href="https://github.com/alphacoderaman0" class="btn btn-success" target="_blank">Source Code</a>
+      </div>
+    </div>
+    <!-- password generator -->
+    <div class="card" style="width: 25rem;">
+      <img src="images/Password.png" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
+      <div class="card-body">
+        <h5 class="card-title text-center">Password Generator</h5>
+        <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
+      </div>
+      <table class="table">
+        <tr>
+          <th>UI/UX:</th>
+          <td>HTML5, CSS</td>
+        </tr>
+        <tr>
+          <th>Logic:</th>
+          <td>Javascript</td>
+        </tr>
+        <tr>
+          <th>Database:</th>
+          <td>none</td>
+        </tr>
+        <tr>
+          <th>IDE:</th>
+          <td>VS Code</td>
+        </tr>
+      </table>
+      <div class="card-body">
+        <a href="https://0-passwordgenerator.netlify.app" class="btn btn-success" target="_blank">Preview</a>
+        <a href="https://github.com/alphacoderaman0" class="btn btn-success" target="_blank">Source Code</a>
+      </div>
+    </div>
+    <!-- vowel counter -->
+    <div class="card" style="width: 25rem;">
+      <img src="images/vowel.png" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
+      <div class="card-body">
+        <h5 class="card-title text-center">Vowel Checker</h5>
+        <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
+      </div>
+      <table class="table">
+        <tr>
+          <th>UI/UX:</th>
+          <td>HTML5, CSS</td>
+        </tr>
+        <tr>
+          <th>Logic:</th>
+          <td>Javascript</td>
+        </tr>
+        <tr>
+          <th>Database:</th>
+          <td>none</td>
+        </tr>
+        <tr>
+          <th>IDE:</th>
+          <td>VS Code</td>
+        </tr>
+      </table>
+      <div class="card-body">
+        <a href="https://0-vowelchecker.netlify.app" class="btn btn-success" target="_blank">Preview</a>
+        <a href="https://github.com/alphacoderaman0" class="btn btn-success" target="_blank">Source Code</a>
+      </div>
+    </div>
+    <!-- pop over shower -->
+    <div class="card" style="width: 25rem;">
+      <img src="images/pop.png" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
+      <div class="card-body">
+        <h5 class="card-title text-center">Popover</h5>
+        <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
+      </div>
+      <table class="table">
+        <tr>
+          <th>UI/UX:</th>
+          <td>HTML5, CSS</td>
+        </tr>
+        <tr>
+          <th>Logic:</th>
+          <td>Javascript</td>
+        </tr>
+        <tr>
+          <th>Database:</th>
+          <td>none</td>
+        </tr>
+        <tr>
+          <th>IDE:</th>
+          <td>VS Code</td>
+        </tr>
+      </table>
+      <div class="card-body">
+        <a href="https://0-popover.netlify.app" class="btn btn-success" target="_blank">Preview</a>
+        <a href="https://github.com/alphacoderaman0" class="btn btn-success" target="_blank">Source Code</a>
+      </div>
+    </div>
+    <!-- digital clock -->
+    <div class="card" style="width: 25rem;">
+      <img src="images/digital.png" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
+      <div class="card-body">
+        <h5 class="card-title text-center">Digital Clock</h5>
+        <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
+      </div>
+      <table class="table">
+        <tr>
+          <th>UI/UX:</th>
+          <td>HTML5, CSS</td>
+        </tr>
+        <tr>
+          <th>Logic:</th>
+          <td>Javascript</td>
+        </tr>
+        <tr>
+          <th>Database:</th>
+          <td>none</td>
+        </tr>
+        <tr>
+          <th>IDE:</th>
+          <td>VS Code</td>
+        </tr>
+      </table>
+      <div class="card-body">
+        <a href="https://0-digitalclock.netlify.app" class="btn btn-success" target="_blank">Preview</a>
+        <a href="https://github.com/alphacoderaman0" class="btn btn-success" target="_blank">Source Code</a>
+      </div>
+    </div>
 
 
 
 
-        </div><!--containter-end  -->
+  </div><!--containter-end  -->
 
-        <footer class="container-fluid">
-            <!-- <p> -->
-                Copyright &copy;
-                <script>document.write(new Date().getFullYear());</script> All rights
-                reserved | This is made with 🤍 by <a href="#"
-                    style="color: red;font-weight: bold;">Aman Mittal</a>
-            <!-- </p> -->
-        </footer>
-    <script src="js/bootstrap.bundle.js"></script>
+  <footer class="container-fluid">
+    <!-- <p> -->
+    Copyright &copy;
+    <script>document.write(new Date().getFullYear());</script> All rights
+    reserved | This is made with 🤍 by <a href="#" style="color: red;font-weight: bold;">Aman Mittal</a>
+    <!-- </p> -->
+  </footer>
+  <script src="js/bootstrap.bundle.js"></script>
 </body>
+
 </html>
