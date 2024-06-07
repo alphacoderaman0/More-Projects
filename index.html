@@ -9,11 +9,21 @@
   <title>MORE PROJECTS</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .card-img-top{
+      transition: 2s ease-in-out;
+    }
+    .card-img-top:hover{
+        scale: 1.5;
+        z-index: 1;
+    }
+  </style>
 </head>
 
 <body>
-  <div class="heading">
-    <a href="https://alphacoderaman.netlify.app" class="btn btn-info"
+  <a href="#top" id="arrow" title="go top">&#8593</a>
+  <div class="heading" id="top">
+    <a href="index.html" class="btn btn-primary"
       style="z-index: 99999; position: absolute; margin-top: 5px;">Back</a>
     <h1>MORE PROJECTS</h1>
   </div>
@@ -80,7 +90,7 @@
     </div>
     <!-- DailyDose-React -->
     <div class="card" style="width: 25rem;">
-      <img src="images/Dailydose.png" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
+      <img src="https://more-projects.netlify.app/images/Dailydose.png" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
       <div class="card-body">
         <h5 class="card-title text-center">DailyDose - News App</h5>
         <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
@@ -140,6 +150,38 @@
           Code</a>
       </div>
     </div>
+
+    <!-- Prediction Game starts -->
+    <div class="card" style="width: 25rem;">
+      <img src="images/pg.png" class="card-img-top" alt="LOADING..." style="width: auto; height: 177px;">
+      <div class="card-body">
+        <h5 class="card-title text-center">Prediction Game Using Javascript</h5>
+        <!-- <p class="card-text">An EDMS offers a user-friendly interface where individuals can input, modify, and track their appointments, tasks, and events in real-time</p> -->
+      </div>
+      <table class="table">
+        <tr>
+          <th>Frontend:</th>
+          <td>HTML, CSS, JS</td>
+        </tr>
+        <tr>
+          <th>Backend:</th>
+          <td>None</td>
+        </tr>
+        <tr>
+          <th>Database:</th>
+          <td>None</td>
+        </tr>
+        <tr>
+          <th>IDE:</th>
+          <td>VS Code</td>
+        </tr>
+      </table>
+      <div class="card-body">
+        <a href="https://predictiongame0.netlify.app/" class="btn btn-success">Preview</a>
+        <a href="https://github.com/alphacoderaman0" class="btn btn-success">Source Code</a>
+      </div>
+    </div>
+    <!-- Prediction Game ends -->
 
     <!-- todo-python -->
     <div class="card" style="width: 25rem;">
@@ -532,6 +574,9 @@
         <a href="https://github.com/alphacoderaman0" class="btn btn-success" target="_blank">Source Code</a>
       </div>
     </div>
+
+    
+
 
 
 
